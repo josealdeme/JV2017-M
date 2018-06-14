@@ -260,16 +260,16 @@ public class SimulacionesDAO implements OperacionesDAO {
 		 
 		Simulacion simulacion = (Simulacion) obj;
 		// Añadir statement
-		java.sql.Statement st;
+		java.sql.Statement st;//crea la conexion con la base de datos
 		String sql = "insert into simulacion (idUsr, fecha, mundo, estado) "
-				+ "values ('" + obtener(simulacion.getIdSimulacion()); 
+				+ "values ('" + obtener(simulacion.getIdSimulacion()); //consulta sql
 		try {
 			st = db.createStatement();
-			int rto = st.executeUpdate(sql);
+			int rto = st.executeUpdate(sql);//ejecuta la consulta sql
 			if (rto == 0) {
 				System.out.println("No se ha realizado ningun cambio");
 			}
-			st.close();
+			st.close();//cierra la conexion para la base de datos
 		} catch (SQLException e) {
 	
 		}
